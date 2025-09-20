@@ -1,2 +1,6 @@
 # PanchamKotian.github.io
-Github Profile page
+
+## Electronics Engineer, Datta Meghe College of Engineering
+
+### Work Experience
+Consultant at Capgemini
