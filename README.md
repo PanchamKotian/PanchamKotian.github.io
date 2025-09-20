@@ -1,4 +1,4 @@
-# PanchamKotian.github.io
+# Robotics Enthusiast
 
 ## Electronics Engineer, Datta Meghe College of Engineering
 
