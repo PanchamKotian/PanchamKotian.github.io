@@ -1,6 +1,9 @@
-# Robotics Enthusiast
-
-## Electronics Engineer, Datta Meghe College of Engineering
+# Robotics Enthusiast/Electronics Engineer
 
 ### Work Experience
-Consultant at Capgemini
+Worked as a consultant at Capgemini
+
+### Education
+Bachelors of Electronics from Datta Meghe College of Engineering
+
+
