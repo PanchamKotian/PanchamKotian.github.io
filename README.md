@@ -5,7 +5,7 @@ On a Journey to master both hardware and software.
 ---
 
 ## About Me
-I design circuits, write code, and build complete systems. I like projects where hardware and software meet, such as embedded systems and small automation tools.
+I design circuits, write code, and build complete systems. I like projects where hardware meets software.
 
 ---
 
@@ -18,10 +18,8 @@ I design circuits, write code, and build complete systems. I like projects where
 Bachelors of Electronics from Datta Meghe College of Engineering
 
 
-# <span>
-<img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="50px" height="40px" alt="👨‍💻" align="left"> 
-<h1>&nbsp;Tech Stack</h1>
-</span>  
+### Tech Stack
+
 
   - 💻 &nbsp;
   ![Embedded C](https://img.shields.io/badge/-C-000000?style=flat&logo=C&logoColor=00599C)
