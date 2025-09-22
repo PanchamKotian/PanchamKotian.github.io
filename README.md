@@ -53,7 +53,6 @@ Bachelors of Electronics from Datta Meghe College of Engineering
 
 <br/>
 ## 🌐 Contact
-- **Email:** kotianpancham@gmail.com
 - [LinkedIn](https://www.linkedin.com/in/panchamkotian)
 - [GitHub](https://github.com/panchamkotian)
 
