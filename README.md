@@ -41,7 +41,7 @@ Bachelors of Electronics from Datta Meghe College of Engineering
   ![Java](https://img.shields.io/badge/-Java-FFFFFF?style=flat&logo=Java&logoColor=007396)
   ![Python3](https://img.shields.io/badge/-Python-FFFFFF?style=flat&logo=python)
   - Electronics &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  ![STM32](https://img.shields.io/badge/-stmicroelectronics-FFFFFF?style=flat&logo=stmicroelectronics&logoColor=00599C)
+  ![STM32](https://img.shields.io/badge/-STM32-FFFFFF?style=flat&logo=stmicroelectronics&logoColor=00599C)
   ![kicad](https://img.shields.io/badge/-kicad-FFFFFF?style=flat&logo=kicad&logoColor=00599C)
   ![easyeda](https://img.shields.io/badge/-easyeda-FFFFFF?style=flat&logo=easyeda&logoColor=00599C)
   ![ltspice](https://img.shields.io/badge/-ltspice-FFFFFF?style=flat&logo=ltspice&logoColor=000000)
