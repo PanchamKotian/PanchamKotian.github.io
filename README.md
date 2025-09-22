@@ -1,6 +1,13 @@
 # Engineer of Electronics & Algorithms
 
-On a Journey to master both hardware and software
+On a Journey to master both hardware and software.
+
+---
+
+## About Me
+I design circuits, write code, and build complete systems. I like projects where hardware and software meet, such as embedded systems and small automation tools.
+
+---
 
 ### Work Experience
 * Worked on ERP, Software Integration and automation @Capgemini for 4.5 years as consultant
@@ -47,3 +54,14 @@ Bachelors of Electronics from Datta Meghe College of Engineering
 
 
 <br/>
+## 🌐 Contact
+- **Email:** kotianpancham@gmail.com
+- [LinkedIn](https://www.linkedin.com/in/panchamkotian)
+- [GitHub](https://github.com/panchamkotian)
+
+Let's build something awesome together!
+
+---
+
+© 2025 Pancham Kotian
+"""
