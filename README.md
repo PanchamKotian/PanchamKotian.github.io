@@ -14,7 +14,6 @@ I design circuits, write code, and build complete systems. I like projects where
     <a href="https://github.com/panchamkotian">
     <img src="https://img.shields.io/badge/Git-f34f29?style=plastic&logo=git&logoColor=white" alt="Youtube Badge"/>
   </a>
-  </a>
     <a href="https://www.youtube.com/@a5ura346">
     <img src="https://img.shields.io/badge/YouTube-FF0033?style=plastic&logo=youtube&logoColor=white" alt="Youtube Badge"/>
   </a>
