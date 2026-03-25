@@ -59,7 +59,17 @@
     background: rgba(128, 128, 128, 0.2);
     transform: scale(1.05);
   }
+    /* Ensure the wrapper fully wraps its content */
+    .wrapper {
+    overflow: auto;          /* or overflow: hidden; but auto is safer */
+    display: block;          /* already block, but be explicit */
+    }
 
+    /* If the heading is inline, change it to block */
+    h1 {
+    display: block;
+    clear: both;
+    }
   /* Links in dark mode */
   body.theme-dark a {
     color: #8bb9ff;

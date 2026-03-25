@@ -33,9 +33,7 @@ Bachelors of Electronics from Datta Meghe College of Engineering
 
 ---
 ### Tech Stack
-
-<<<<<<< HEAD
-# <span>
+<span>
 <img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="50px" height="40px" alt="👨‍💻" align="left"> 
 <h1>&nbsp;Tech Stack</h1>
 </span>  
@@ -110,5 +108,4 @@ Let's build something awesome together!
 ---
 
 © 2025 Pancham Kotian
-"""
 
