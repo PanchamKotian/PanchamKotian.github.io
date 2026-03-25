@@ -1,8 +1,5 @@
 # Engineer of Electronics & Algorithms
 
-<<<<<<< HEAD
-On a Journey to master both hardware and software
-=======
 On a Journey to master both hardware and software.
 
 ---
@@ -23,7 +20,7 @@ I design circuits, write code, and build complete systems. I like projects where
 </div>
 
 ---
->>>>>>> b30d82702b8f56278b59121aaffd03aa245d68ce
+
 
 ### Work Experience
 * Worked on ERP, Software Integration and automation @Capgemini for 4.5 years as consultant
@@ -74,7 +71,6 @@ Bachelors of Electronics from Datta Meghe College of Engineering
 
 
 <br/>
-=======
 
   - Languages &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   ![Embedded C](https://img.shields.io/badge/-C-FFFFFF?style=flat&logo=C&logoColor=00599C)
@@ -115,4 +111,4 @@ Let's build something awesome together!
 
 © 2025 Pancham Kotian
 """
->>>>>>> b30d82702b8f56278b59121aaffd03aa245d68ce
+
