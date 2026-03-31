@@ -33,10 +33,7 @@ Bachelors of Electronics from Datta Meghe College of Engineering
 
 ---
 ### Tech Stack
-<span>
-<img src="https://media2.giphy.com/media/QssGEmpkyEOhBCb7e1/giphy.gif?cid=ecf05e47a0n3gi1bfqntqmob8g9aid1oyj2wr3ds3mg700bl&rid=giphy.gif" width="50px" height="40px" alt="👨‍💻" align="left"> 
-<h1>&nbsp;Tech Stack</h1>
-</span>  
+
 
   - 💻 &nbsp;
   ![Embedded C](https://img.shields.io/badge/-C-000000?style=flat&logo=C&logoColor=00599C)
@@ -66,6 +63,7 @@ Bachelors of Electronics from Datta Meghe College of Engineering
   ![CSS](https://img.shields.io/badge/-CSS-000000?style=flat&logo=CSS3&logoColor=1572B6)
   ![JavaScript](https://img.shields.io/badge/-JavaScript-000000?style=flat-square&logo=JavaScript)
   ![three.js](https://img.shields.io/badge/-threedotjs-000000?style=flat&logo=threedotjs)
+
 
 
 <br/>
@@ -98,7 +96,7 @@ Bachelors of Electronics from Datta Meghe College of Engineering
   ![CSS](https://img.shields.io/badge/-CSS-FFFFFF?style=flat&logo=css&logoColor=1572B6)
   ![JavaScript](https://img.shields.io/badge/-JavaScript-FFFFFF?style=flat-square&logo=JavaScript)
   ![three.js](https://img.shields.io/badge/-threedotjs-FFFFFF?style=flat&logo=threedotjs&logoColor=000000)
-
+  ![php]()
 
 <br/>
 
