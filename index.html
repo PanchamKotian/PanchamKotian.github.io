@@ -6,199 +6,40 @@
     <title>Pancham Kotian | Electronics & Algorithms Engineer</title>
     <link href="https://fonts.googleapis.com/css2?family=VT323&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        :root {
-            --bg-base: #02040a;
-            --surface: rgba(10, 15, 30, 0.75);
-            --border: rgba(88, 166, 255, 0.2);
-            --text-main: #f0f6fc;
-            --text-muted: #8b949e;
-            --accent: #58a6ff;
-            --glow: 0 0 20px rgba(88, 166, 255, 0.3);
-            --font-pixel: 'VT323', monospace;
-            --font-mono: 'Space Mono', monospace;
-        }
-
-        body.light {
-            --bg-base: #e0e5ec;
-            --surface: rgba(255, 255, 255, 0.9);
-            --border: rgba(0, 89, 156, 0.2);
-            --text-main: #1a202c;
-            --text-muted: #4a5568;
-            --accent: #00599C;
-            --glow: 0 4px 15px rgba(0, 0, 0, 0.05);
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: var(--font-mono);
-            background-color: var(--bg-base);
-            color: var(--text-main);
-            transition: background 0.5s ease;
-            overflow-x: hidden;
-        }
-
-        #space-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            z-index: -1;
-            pointer-events: none;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 5rem 1.5rem;
-            position: relative;
-        }
-
-        .hud-panel {
-            background: var(--surface);
-            backdrop-filter: blur(10px);
-            border: 2px solid var(--border);
-            border-radius: 4px;
-            padding: 2.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 6px 6px 0px var(--border);
-        }
-
-        .avatar-container {
-            width: 140px;
-            height: 140px;
-            flex-shrink: 0;
-            position: relative;
-            overflow: hidden;
-            border-radius: 50%;
-            border: 3px solid var(--accent);
-            box-shadow: 0 0 20px var(--accent);
-            aspect-ratio: 1 / 1;
-        }
-
-        .avatar {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center;
-            display: block;
-            transform: scale(1.2);
-            transition: transform 0.3s ease;
-        }
-
-        h1 { font-family: var(--font-pixel); font-size: 3.5rem; color: var(--accent); text-transform: uppercase; line-height: 1; }
-        .tagline { font-size: 0.9rem; margin-top: 5px; font-weight: bold; }
-        h2 { font-family: var(--font-pixel); font-size: 2rem; color: var(--accent); margin-bottom: 1.5rem; }
-
-        .theme-toggle-btn {
-            position: fixed;
-            top: 25px;
-            right: 25px;
-            z-index: 100;
-            background: var(--surface);
-            border: 2px solid var(--border);
-            color: var(--accent);
-            width: 50px;
-            height: 50px;
-            cursor: pointer;
-            box-shadow: 3px 3px 0px var(--border);
-        }
-
-        /* Improved explosion: white core, red outer, fast fade */
-        .blast {
-            position: fixed;
-            width: 28px;
-            height: 28px;
-            border-radius: 50%;
-            background: radial-gradient(circle, #fff 0%, #ff4d4d 70%, transparent 100%);
-            transform: translate(-50%, -50%) scale(0);
-            animation: explode 0.15s ease-out forwards;
-            pointer-events: none;
-            z-index: 1000;
-        }
-        @keyframes explode {
-            0% { transform: translate(-50%, -50%) scale(0); opacity: 1; }
-            60% { transform: translate(-50%, -50%) scale(1.3); opacity: 0.9; }
-            100% { transform: translate(-50%, -50%) scale(1.8); opacity: 0; }
-        }
-
-        .social-links {
-            margin-top: 1rem;
-            display: flex;
-            gap: 1rem;
-        }
-        .social-links a {
-            color: var(--accent);
-            font-size: 1.8rem;
-            transition: color 0.2s, transform 0.2s;
-        }
-        .social-links a:hover {
-            transform: translateY(-3px);
-        }
-        body.light .social-links a:hover {
-            color: #00599C;
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-        .skill-category h3 {
-            margin-bottom: 0.5rem;
-        }
-        .badge-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-        .badge-list img {
-            height: 30px;
-        }
-        .timeline-item {
-            margin-bottom: 1.5rem;
-            border-left: 3px solid var(--accent);
-            padding-left: 1rem;
-        }
-        .timeline-item .meta {
-            font-size: 0.7rem;
-            color: var(--text-muted);
-            letter-spacing: 1px;
-            margin-bottom: 0.25rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="dark">
     <canvas id="space-canvas"></canvas>
-    <button class="theme-toggle-btn" id="themeBtn" aria-label="Toggle Theme">
-        <i class="fas fa-sun" id="themeIcon"></i>
-    </button>
-
     <div class="container">
         <div class="hud-panel">
-            <div style="display: flex; align-items: center; gap: 2.5rem; flex-wrap: wrap;">
+            <div style="display: flex; justify-content: flex-end; margin-bottom: 1rem;">
+                <button class="theme-toggle-btn" id="themeBtn" aria-label="Toggle Theme"></button>
+            </div>
+            <div class="header-flex">
                 <div class="avatar-container">
-                    <img class="avatar" src="assets/img/headshot_circle.png" alt="Pancham Kotian" onerror="this.src='https://via.placeholder.com/140/0a0f1e/58a6ff?text=PK'">
+                    <img class="avatar" src="assets/img/headshot_circle.png" alt="Pancham Kotian" onerror="this.src='https://dummyimage.com/140x140/000/fff.png&text=PK'">
                 </div>
-                <div>
+                <div class="header-info">
                     <h1>Pancham Kotian</h1>
                     <div class="tagline" id="typewriter"></div>
                     <div class="social-links">
                         <a href="https://github.com/panchamkotian" target="_blank"><i class="fab fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/pancham-kotian-156120156/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="mailto:panchamkotian98@example.com"><i class="fas fa-envelope"></i></a>
+                        <a href="mailto:panchamkotian98@gmail.com"><i class="fas fa-envelope"></i></a>
+                        <a href="tel:+917039970593"><i class="fa fa-phone"></i></a>
+                    </div>
+                    <div style="margin-top: 1rem;">
+                        <a href="assets/resume-hardware.pdf" download class="resume-btn">📄 Download Resume</a>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="hud-panel">
-            <h2><i class="fas fa-satellite-dish"></i> Mission.Brief</h2>
-            <p>In the vast space between a circuit board and a software suite, I find my purpose. I’ve spent the last years navigating the complexities of software automation and ERP integration, gaining the technical coordinates needed to build complete, self-sustaining systems. I thrive where hardware meets software—building the robots and the code that drives them. I don't just solve problems; I architect the vehicles for the next frontier of automation.</p>
+        <div class="hud-panel hero-section">
+            <h2><i class="fas fa-user-astronaut"></i> Introduction</h2>
+            <p>Electronics engineer & full‑stack developer with 4.5+ years of experience in ERP integration, IoT, and automation. I bridge hardware and software to build reliable, scalable systems.</p>
         </div>
-
         <div class="hud-panel">
-            <h2><i class="fas fa-clock"></i> Flight.Logs</h2>
+            <h2><i class="fas fa-clock"></i> Experience</h2>
             <div class="timeline-item">
                 <h3>Consultant – ERP, Software Integration & Automation</h3>
                 <div class="meta">CAPGEMINI | 4.5 YEARS</div>
@@ -207,7 +48,7 @@
             <div class="timeline-item">
                 <h3>Co-founder – IoT Universal Switch</h3>
                 <div class="meta">BITLEAF | 1 YEAR</div>
-                <p>Designed and prototyped an IoT‑enabled universal switch, handling both hardware (PCB, ESP32) and cloud integration.</p>
+                <p>Designed and prototyped an IoT‑enabled universal switch, handling both hardware and cloud integration.</p>
             </div>
             <div class="timeline-item">
                 <h3>Intern – Reverse Engineering Control Systems</h3>
@@ -215,17 +56,15 @@
                 <p>Studied NXP devices, reverse‑engineered communication protocols, and contributed to safety system analysis.</p>
             </div>
         </div>
-
         <div class="hud-panel">
-            <h2><i class="fas fa-book"></i> Knowledge.Base</h2>
+            <h2><i class="fas fa-book"></i> Education</h2>
             <div class="timeline-item">
                 <h3>Bachelor of Electronics Engineering</h3>
                 <div class="meta">DATTA MEGHE COLLEGE OF ENGINEERING</div>
             </div>
         </div>
-
         <div class="hud-panel">
-            <h2><i class="fas fa-server"></i> Hardware_&_Software.Stack</h2>
+            <h2><i class="fas fa-server"></i> Software.Stack</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Languages</h3>
@@ -245,6 +84,10 @@
                         <img src="https://img.shields.io/badge/-Altium-000000?style=for-the-badge&logo=altiumdesigner&logoColor=white" alt="Altium">
                         <img src="https://img.shields.io/badge/-KiCad-314B6B?style=for-the-badge&logo=kicad&logoColor=white" alt="KiCad">
                         <img src="https://img.shields.io/badge/-NXP-000000?style=for-the-badge&logo=nxp&logoColor=white" alt="NXP">
+                        <img src="https://img.shields.io/badge/-Raspberry%20Pi-C51A4A?style=for-the-badge&logo=raspberrypi&logoColor=white" alt="Raspberry Pi">
+                        <img src="https://img.shields.io/badge/-MQTT-000000?style=for-the-badge&logo=mqtt&logoColor=white" alt="MQTT">
+                        <img src="https://img.shields.io/badge/-STM32-blue?style=for-the-badge&logo=stm32&logoColor=white" alt="STM32">
+                        <img src="https://img.shields.io/badge/-Espressif-E7352C?style=for-the-badge&logo=espressif&logoColor=white" alt="Espressif">
                     </div>
                 </div>
                 <div class="skill-category">
@@ -258,381 +101,27 @@
                         <img src="https://img.shields.io/badge/-Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white" alt="Docker">
                     </div>
                 </div>
+                <div class="skill-category">
+                    <h3>Integration & Databases</h3>
+                    <div class="badge-list">
+                        <img src="https://img.shields.io/badge/-SOAP%20API-0078D4?style=for-the-badge&logo=soap&logoColor=white" alt="SOAP API">
+                        <img src="https://img.shields.io/badge/-REST%20API-FF6C37?style=for-the-badge&logo=postman&logoColor=white" alt="REST API">
+                        <img src="https://img.shields.io/badge/-EAI-8A2BE2?style=for-the-badge" alt="EAI">
+                        <img src="https://img.shields.io/badge/-ElasticSearch-005571?style=for-the-badge&logo=elasticsearch&logoColor=white" alt="ElasticSearch">
+                        <img src="https://img.shields.io/badge/-MongoDB-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB">
+                        <img src="https://img.shields.io/badge/-Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white" alt="Supabase">
+                        <img src="https://img.shields.io/badge/-cPanel-FF6C2C?style=for-the-badge&logo=cpanel&logoColor=white" alt="cPanel">
+                        <img src="https://img.shields.io/badge/-Informix%20DB-003B5C?style=for-the-badge" alt="Informix DB">
+                        <img src="https://img.shields.io/badge/-Oracle%2011g-F80000?style=for-the-badge&logo=oracle&logoColor=white" alt="Oracle 11g">
+                    </div>
+                </div>
             </div>
         </div>
 
-        <footer style="text-align: center; font-family: 'JetBrains Mono', monospace; color: var(--text-muted); font-size: 0.8rem; margin-top: 2rem;">
-            SYSTEM STATUS: NOMINAL • ORBIT SECURED • © 2026 Pancham Kotian
+        <footer>
+            <p>© 2025 Pancham Kotian • Built with <i class="fas fa-heart" style="color: #e11d48;"></i> on GitHub Pages</p>
         </footer>
     </div>
-
-    <script>
-        // ======================== KESSLER SIMULATION ========================
-        const canvas = document.getElementById('space-canvas');
-        const ctx = canvas.getContext('2d');
-        const themeBtn = document.getElementById('themeBtn');
-        let width, height, stars = [], satellites = [], debris = [];
-        let isNightMode = true;
-        let communicationEdges = [];      // list of {from, to, progress, distance}
-        let animationFrame = 0;            // for wifi pulsation
-
-        const MAX_DEBRIS = 300;
-        const SATELLITE_COUNT = 12;
-
-        // ---- Load satellite icon (embedded SVG) ----
-        const satelliteImage = new Image();
-        const svgData = `<?xml version="1.0" encoding="utf-8"?>
-<svg width="128px" height="128px" viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" preserveAspectRatio="xMidYMid meet">
-<path d="M51.24 75.33S3.98 57.62 4 57.25L5.12 23.6c.02-.45.47-.75.89-.59l46.35 17.12c.38.14.62.51.61.91l-1.13 33.9c-.01.3-.31.5-.6.39z" fill="#2f7889"></path>
-<path d="M9.29 59.89l41.95 15.44c.28.11.59-.09.6-.4l1.13-33.9l-7.57-2.85L9.29 59.89z" fill="#37474f"></path>
-<path d="M51.24 75.33L4.55 58.08a.854.854 0 0 1-.55-.82L5.12 23.6c.02-.45.47-.75.89-.59l46.35 17.12c.38.14.62.51.61.91l-1.13 33.9c-.01.3-.31.5-.6.39z" fill="none" stroke="#9dd4e0" stroke-width="2.042" stroke-miterlimit="10"></path>
-<path fill="none" stroke="#9dd4e0" stroke-width="1.021" stroke-miterlimit="10" d="M52.41 57.96L4.57 40.27"></path>
-<path fill="none" stroke="#9dd4e0" stroke-width="1.021" stroke-miterlimit="10" d="M29.54 32.71l-1.17 34.02"></path>
-<path fill="none" stroke="#9dd4e0" stroke-width="1.021" stroke-miterlimit="10" d="M16.94 27.39l-1.06 35.2"></path>
-<path fill="none" stroke="#9dd4e0" stroke-width="1.021" stroke-miterlimit="10" d="M42.02 35.95l-1.06 35.44"></path>
-<path d="M82.81 38.76l1.46-2.49c.59-1.01 1.82-1.5 2.93-1.13c2.04.68 5.21 2.43 7.46 6.88c2.27 4.49 1.93 8.12 1.37 10.17a2.53 2.53 0 0 1-2.38 1.88l-2.04.04l-8.8-15.35z" fill="#bf8904"></path>
-<path d="M91.15 40.25c-.63.82.08 4.67-.76 5.61c-.42.46-1.01.9-1.58.65l2.29 7.61l2.57-.04a2.51 2.51 0 0 0 2.38-1.88c.55-2.05.9-5.68-1.37-10.17c-.3-.57-2.06-3.71-3.53-1.78z" fill="#875d00"></path>
-<path fill="#ffca28" d="M89.28 41.23L68.9 33.46l-21.19 9.97L53.65 86l22.18-9.48l16.91-13.77z"></path>
-<path fill="#e2a610" d="M89.28 41.22l-21.33 9.92l-14.1 35.25l22.18-9.48l16.91-13.77z"></path>
-<path fill="#bf8904" d="M67.99 51.25l-20.37-7.77l-16.91 13.76l3.46 21.53l20.37 7.76l16.91-13.76z"></path>
-<path d="M93.17 63.12l-21.82 9.67l-3.44 2.85c.01-.14.6-6.87-4.9-15.06c-3.95-5.89-12.89-9.2-12.89-9.2l4.45 35.3l22.17-9.48l16.43-14.08z" fill="#875d00"></path>
-<path d="M122.27 105.01S75.01 87.3 75.03 86.93l1.12-33.66c.02-.45.47-.75.89-.59l46.35 17.12c.38.14.62.51.61.91l-1.13 33.9c-.01.31-.31.51-.6.4z" fill="#2f7889"></path>
-<path d="M80.32 89.57l41.95 15.44c.28.11.59-.09.6-.4L124 69.95l-6.99-2.43l-36.69 22.05z" fill="#37474f"></path>
-<path d="M122.27 105.01L75.58 87.76a.858.858 0 0 1-.55-.83l1.12-33.66c.02-.45.47-.75.89-.59l46.35 17.12c.38.14.62.51.61.91l-1.13 33.9c-.01.31-.31.51-.6.4z" fill="none" stroke="#9dd4e0" stroke-width="2.042" stroke-miterlimit="10"></path>
-<path fill="none" stroke="#9dd4e0" stroke-width="1.021" stroke-miterlimit="10" d="M123.44 87.63L75.6 69.95"></path>
-<path fill="none" stroke="#9dd4e0" stroke-width="1.021" stroke-miterlimit="10" d="M100.57 62.39l-1.17 34.02"></path>
-<path fill="none" stroke="#9dd4e0" stroke-width="1.021" stroke-miterlimit="10" d="M87.97 57.06l-1.06 35.2"></path>
-<path fill="none" stroke="#9dd4e0" stroke-width="1.021" stroke-miterlimit="10" d="M113.05 65.63l-1.06 35.44"></path>
-<path d="M75.03 39.47c0-1.57-2.67-2.85-5.96-2.85s-5.96 1.27-5.96 2.85v2.23c0 1.57 2.67 2.85 5.96 2.85s5.96-1.27 5.96-2.85v-2.23z" fill="#e2a610"></path>
-<ellipse cx="69.07" cy="39.47" rx="5.96" ry="2.85" fill="#e2a610"></ellipse>
-<ellipse cx="69.07" cy="39.27" rx="5.01" ry="2.2" fill="#ffca28"></ellipse>
-<path d="M70.02 39.3s-.19.4-.94.4s-.94-.4-.94-.4s.27-10.28.35-10.95c.08-.67 1.02-.65 1.05 0c.02.65.48 10.95.48 10.95z" fill="#e2a610"></path>
-<path d="M75.03 39.47s-.37 1.63-3.68 2.29c-2.43.48-4.17.29-4.59 1.56c-.32.96 1.98 1.75 5.23.87c2.93-.8 3.04-2.26 3.04-2.48v-2.24z" fill="#bf8904"></path>
-<path d="M53.94 92.43L36.62 46.49c7.54-2.84 21.56 3.62 26.34 16.3s-1.48 26.8-9.02 29.64z" fill="#9dd4e0"></path>
-<path d="M51.7 86.49l2.24 5.94c7.54-2.84 13.81-16.95 9.02-29.64c-.4-1.06-.87-2.08-1.4-3.06c1.9 8.89-1.6 19.92-9.86 26.76z" fill="#2f7889"></path>
-<ellipse transform="rotate(-20.653 45.232 69.563)" cx="45.23" cy="69.56" rx="13.25" ry="23.6" fill="#f5f5f5"></ellipse>
-<path d="M37.04 68.06c-3.51-6.56-5.78-16.39-1.43-20.05c4.59-3.86 11.08.68 14.34 3.57c1.81 1.6 2.76 2.85 3.7 4.13c5.36 7.3 9.97 21.66 3.79 26.91c-4.31 3.66-15.15-4.74-20.4-14.56z" fill="#bdbdbd"></path>
-<path d="M33.52 73.89c-4.31-11.44-2.57-23.13 3.81-25.53s15.4 5.23 19.71 16.67s2.57 23.13-3.81 25.53s-15.4-5.23-19.71-16.67m-1.34.51c4.78 12.69 14.77 20.67 22.31 17.82 7.54-2.84 9.78-15.43 4.99-28.12S44.71 43.44 37.17 46.28c-7.54 2.84-9.77 15.43-4.99 28.12z" fill="#6392a5"></path>
-<path fill="none" stroke="#6392a5" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" d="M26.72 76.3l26.06-11.54"></path>
-<path fill="none" stroke="#6392a5" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" d="M26.72 76.3l15.19-17.01"></path>
-<path fill="none" stroke="#6392a5" stroke-width="1.5" stroke-linecap="round" stroke-miterlimit="10" d="M26.72 76.3l23.25 3.54"></path>
-<path d="M28.4 74.49l.79 2.08a.85.85 0 0 1-.5 1.1l-4.13 1.56a.85.85 0 0 1-1.1-.5l-.79-2.08a.85.85 0 0 1 .5-1.1L27.3 74a.85.85 0 0 1 1.1.49z" fill="#6392a5"></path>
-</svg>`;
-        const svgBlob = new Blob([svgData], {type: 'image/svg+xml'});
-        const satelliteUrl = URL.createObjectURL(svgBlob);
-        satelliteImage.src = satelliteUrl;
-        let imageLoaded = false;
-        satelliteImage.onload = () => { imageLoaded = true; };
-
-        // ----- Star class -----
-        class Star {
-            constructor() { this.reset(); }
-            reset() {
-                this.x = Math.random() * width;
-                this.y = Math.random() * height;
-                this.size = Math.random() * 1.5;
-                this.alpha = Math.random();
-                this.blink = Math.random() * 0.015;
-            }
-            draw() {
-                this.alpha += this.blink;
-                if (this.alpha > 1 || this.alpha < 0.2) this.blink *= -1;
-                ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
-                ctx.fillRect(this.x, this.y, this.size, this.size);
-            }
-        }
-        class Satellite {
-            constructor() {
-                this.init();
-                this.trail = [];
-                this.maxTrail = 20;
-            }
-            init() {
-                const side = Math.floor(Math.random() * 4);
-                if(side === 0) { this.x = -80; this.y = Math.random() * height; }
-                else if(side === 1) { this.x = width + 80; this.y = Math.random() * height; }
-                else if(side === 2) { this.x = Math.random() * width; this.y = -80; }
-                else { this.x = Math.random() * width; this.y = height + 80; }
-                this.vx = (Math.random() - 0.5) * (Math.random() * 1.5 + 0.8);
-                this.vy = (Math.random() - 0.5) * (Math.random() * 1.5 + 0.8);
-                this.angle = Math.random() * Math.PI * 2;
-                this.radius = 25;
-                this.trail = [];
-            }
-            update() {
-                if (isNightMode) {
-                    this.trail.unshift({ x: this.x, y: this.y });
-                    if (this.trail.length > this.maxTrail) this.trail.pop();
-                    this.x += this.vx;
-                    this.y += this.vy;
-                    if (this.x < -200 || this.x > width + 200 || this.y < -200 || this.y > height + 200) this.init();
-                } else {
-                    // Day mode: no movement, but keep trail for stationary objects
-                    this.trail.unshift({ x: this.x, y: this.y });
-                    if (this.trail.length > this.maxTrail) this.trail.pop();
-                }
-            }
-            drawTrail() {
-                for (let i = 0; i < this.trail.length; i++) {
-                    const point = this.trail[i];
-                    const age = i / this.trail.length;
-                    const alpha = (1 - age) * 0.6;
-                    ctx.fillStyle = `rgba(88, 166, 255, ${alpha})`;
-                    ctx.beginPath();
-                    ctx.arc(point.x, point.y, 2 - age * 1.5, 0, Math.PI * 2);
-                    ctx.fill();
-                }
-            }
-            drawPulse() {
-                if (!isNightMode) {
-                    const time = Date.now() * 0.005;
-                    const radius = 20 + Math.sin(time) * 8;
-                    const alpha = 0.3 + Math.sin(time * 3) * 0.2;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, radius, 0, Math.PI * 2);
-                    ctx.strokeStyle = `rgba(88, 166, 255, ${alpha})`;
-                    ctx.lineWidth = 2;
-                    ctx.stroke();
-                    // second ring
-                    const radius2 = 30 + Math.sin(time + 1) * 10;
-                    const alpha2 = 0.2 + Math.sin(time * 2) * 0.15;
-                    ctx.beginPath();
-                    ctx.arc(this.x, this.y, radius2, 0, Math.PI * 2);
-                    ctx.strokeStyle = `rgba(88, 166, 255, ${alpha2})`;
-                    ctx.stroke();
-                }
-            }
-            draw() {
-                this.drawTrail();
-                ctx.save();
-                ctx.translate(this.x, this.y);
-                ctx.rotate(this.angle);
-                ctx.shadowBlur = 12;
-                ctx.shadowColor = '#58a6ff';
-                if (imageLoaded && satelliteImage.complete && satelliteImage.naturalWidth > 0) {
-                    const imgW = 32, imgH = 32;
-                    ctx.drawImage(satelliteImage, -imgW/2, -imgH/2, imgW, imgH);
-                } else {
-                    const mainColor = isNightMode ? '#8b949e' : '#00599C';
-                    const wingColor = isNightMode ? '#58a6ff' : '#4a5568';
-                    ctx.fillStyle = mainColor;
-                    ctx.fillRect(-8, -8, 16, 16);
-                    ctx.strokeStyle = mainColor;
-                    ctx.lineWidth = 2;
-                    ctx.beginPath(); ctx.arc(0, -12, 7, Math.PI, 0); ctx.stroke();
-                    ctx.fillStyle = wingColor;
-                    ctx.fillRect(-22, -4, 14, 8);
-                    ctx.fillRect(8, -4, 14, 8);
-                }
-                ctx.restore();
-                this.drawPulse();
-            }
-            isOnScreen() {
-                return this.x > 0 && this.x < width && this.y > 0 && this.y < height;
-            }
-        }
-        class Debris {
-            constructor(x, y, vx, vy) {
-                this.x = x;
-                this.y = y;
-                this.vx = vx;
-                this.vy = vy;
-                this.size = Math.random() * 3 + 2;
-                this.radius = this.size;
-            }
-            update() {
-                this.x += this.vx;
-                this.y += this.vy;
-            }
-            draw() {
-                ctx.fillStyle = '#aaaaaa';
-                ctx.fillRect(this.x - this.size/2, this.y - this.size/2, this.size, this.size);
-            }
-            isOnScreen() {
-                return this.x > -50 && this.x < width + 50 && this.y > -50 && this.y < height + 50;
-            }
-        }
-        function createBlast(x, y) {
-            const blast = document.createElement('div');
-            blast.className = 'blast';
-            blast.style.left = x + 'px';
-            blast.style.top = y + 'px';
-            document.body.appendChild(blast);
-            setTimeout(() => blast.remove(), 150);
-        }
-
-        function spawnDebris(x, y, count = 12) {
-            for (let i = 0; i < count; i++) {
-                if (debris.length > MAX_DEBRIS) break;
-                const angle = Math.random() * Math.PI * 2;
-                const speed = Math.random() * 3 + 1;
-                const vx = Math.cos(angle) * speed;
-                const vy = Math.sin(angle) * speed;
-                debris.push(new Debris(x, y, vx, vy));
-            }
-        }
-
-        function collides(a, b) {
-            const dx = a.x - b.x;
-            const dy = a.y - b.y;
-            const dist = Math.hypot(dx, dy);
-            return dist < (a.radius + b.radius);
-        }
-
-        function handleCollisions() {
-            for (let i = 0; i < satellites.length; i++) {
-                for (let j = i + 1; j < satellites.length; j++) {
-                    if (collides(satellites[i], satellites[j])) {
-                        const midX = (satellites[i].x + satellites[j].x) / 2;
-                        const midY = (satellites[i].y + satellites[j].y) / 2;
-                        createBlast(midX, midY);
-                        spawnDebris(midX, midY, 12);
-                        satellites.splice(j, 1);
-                        satellites.splice(i, 1);
-                        satellites.push(new Satellite());
-                        satellites.push(new Satellite());
-                        i--; break;
-                    }
-                }
-            }
-            for (let i = 0; i < satellites.length; i++) {
-                for (let j = 0; j < debris.length; j++) {
-                    if (collides(satellites[i], debris[j])) {
-                        const midX = (satellites[i].x + debris[j].x) / 2;
-                        const midY = (satellites[i].y + debris[j].y) / 2;
-                        createBlast(midX, midY);
-                        spawnDebris(midX, midY, 12);
-                        satellites.splice(i, 1);
-                        satellites.push(new Satellite());
-                        debris.splice(j, 1);
-                        i--; break;
-                    }
-                }
-            }
-        }
-
-        // ----- Communication lines (day mode) using nearest‑neighbor (Dijkstra‑inspired) -----
-        function rebuildCommunicationEdges() {
-            if (satellites.length < 2) {
-                communicationEdges = [];
-                return;
-            }
-            // Compute all distances and create edges
-            const edges = [];
-            for (let i = 0; i < satellites.length; i++) {
-                for (let j = i + 1; j < satellites.length; j++) {
-                    const dist = Math.hypot(satellites[i].x - satellites[j].x, satellites[i].y - satellites[j].y);
-                    edges.push({ from: satellites[i], to: satellites[j], dist, progress: 0 });
-                }
-            }
-            // Sort by distance (nearest first)
-            edges.sort((a, b) => a.dist - b.dist);
-            // Keep only the closest edges so that each satellite has ~2 connections (dense network but not cluttered)
-            // For 12 satellites, keep up to 18 edges (1.5 per satellite)
-            const maxEdges = Math.min(edges.length, Math.floor(satellites.length * 1.5));
-            communicationEdges = edges.slice(0, maxEdges);
-        }
-
-        function drawCommunicationLines() {
-            for (const edge of communicationEdges) {
-                if (edge.progress < 1) edge.progress += 0.02;  // animate drawing
-                const from = edge.from;
-                const to = edge.to;
-                const dx = (to.x - from.x) * edge.progress;
-                const dy = (to.y - from.y) * edge.progress;
-                ctx.beginPath();
-                ctx.moveTo(from.x, from.y);
-                ctx.lineTo(from.x + dx, from.y + dy);
-                ctx.strokeStyle = 'rgba(88, 166, 255, 0.5)';
-                ctx.lineWidth = 2;
-                ctx.setLineDash([6, 8]);
-                ctx.stroke();
-                ctx.setLineDash([]);
-            }
-        }
-
-        // ----- Resize -----
-        function resize() {
-            width = canvas.width = window.innerWidth;
-            height = canvas.height = window.innerHeight;
-            stars = Array.from({length: 100}, () => new Star());
-            if(satellites.length === 0) {
-                satellites = Array.from({length: SATELLITE_COUNT}, () => new Satellite());
-            } else {
-                // On resize, reposition satellites that are way off
-                satellites.forEach(s => {
-                    if (s.x < -1000 || s.x > width + 1000 || s.y < -1000 || s.y > height + 1000) s.init();
-                });
-            }
-            if (!isNightMode) rebuildCommunicationEdges(); // rebuild lines after resize
-        }
-
-        // ----- Animation loop -----
-        function animate() {
-            ctx.clearRect(0, 0, width, height);
-
-            if (isNightMode) stars.forEach(s => s.draw());
-
-            // Update and draw debris
-            for (let i = debris.length-1; i >= 0; i--) {
-                debris[i].update();
-                if (!debris[i].isOnScreen()) {
-                    debris.splice(i,1);
-                } else {
-                    debris[i].draw();
-                }
-            }
-
-            // Update satellites (movement only at night)
-            satellites.forEach(s => s.update());
-
-            if (!isNightMode) {
-                drawCommunicationLines();
-            }
-
-            satellites.forEach(s => s.draw());
-
-            handleCollisions();
-
-            // If in day mode, ensure communication edges are rebuilt after collisions
-            if (!isNightMode && communicationEdges.length === 0 && satellites.length > 1) {
-                rebuildCommunicationEdges();
-            }
-
-            requestAnimationFrame(animate);
-        }
-
-        // ----- Theme toggle -----
-        themeBtn.addEventListener('click', () => {
-            isNightMode = !isNightMode;
-            document.body.classList.toggle('light');
-            if (!isNightMode) {
-                rebuildCommunicationEdges();   // create fresh edges for day mode
-            } else {
-                communicationEdges = [];        // clear lines at night
-            }
-        });
-
-        window.addEventListener('resize', resize);
-        resize();
-        animate();
-
-        // ----- Typewriter effect -----
-        const text = "Electronics & Algorithms Engineer";
-        let charIdx = 0;
-        function type() {
-            if (charIdx < text.length) {
-                document.getElementById("typewriter").innerHTML += text.charAt(charIdx);
-                charIdx++;
-                setTimeout(type, 50);
-            }
-        }
-        type();
-
-        // Clean up object URL when page unloads
-        window.addEventListener('beforeunload', () => {
-            URL.revokeObjectURL(satelliteUrl);
-        });
-    </script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
